@@ -39,7 +39,7 @@ function Nav() {
             id="navbar-01"
             className="hidden lg:flex gap-8 text-grayish-blue h-full relative "
           >
-            <span
+            <div
               className={`hover:text-very-dark-blue border-b-4 border-transparent  grid items-center cursor-pointer ${
                 activePage === 1 && "border-orange"
               }`}
@@ -51,8 +51,8 @@ function Nav() {
               >
                 Collections
               </Link>
-            </span>
-            <span
+            </div>
+            <div
               className={`hover:text-very-dark-blue border-b-4 border-transparent grid items-center cursor-pointer ${
                 activePage === 2 && "border-orange"
               }`}
@@ -64,8 +64,8 @@ function Nav() {
               >
                 Men
               </Link>
-            </span>{" "}
-            <span
+            </div>{" "}
+            <div
               className={`hover:text-very-dark-blue border-b-4 border-transparent grid items-center cursor-pointer ${
                 activePage === 3 && "border-orange"
               }`}
@@ -78,8 +78,8 @@ function Nav() {
               >
                 Women
               </Link>
-            </span>
-            <span
+            </div>
+            <div
               className={`hover:text-very-dark-blue border-b-4 border-transparent grid items-center ${
                 activePage === 4 && "border-orange"
               }`}
@@ -92,8 +92,8 @@ function Nav() {
               >
                 About
               </Link>
-            </span>
-            <span
+            </div>
+            <div
               className={`hover:text-very-dark-blue border-b-4 border-transparent  grid items-center ${
                 activePage === 5 && "border-orange"
               }`}
@@ -106,7 +106,7 @@ function Nav() {
               >
                 Contact
               </Link>
-            </span>
+            </div>
           </menu>
         </div>
         <div id="cart--profile" className="flex items-center gap-6 lg:gap-12">
