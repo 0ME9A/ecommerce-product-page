@@ -1,0 +1,26 @@
+{
+    "name": "E-commerce-product-page",
+    "short_name": "E-commerce",
+    "start_url": "http://localhost:3000/",
+    "display": "standalone",
+    "background_color": "rgb(255,125,26)",
+    "theme_color": "rgb(255,125,26)",
+    "orientation": "portrait-primary",
+    "icons": [
+      {
+        "src": "/logo.png",
+        "type": "image/png",
+        "sizes": "32x32"
+      },
+      {
+        "src": "/logo_176.png",
+        "type": "image/png",
+        "sizes": "176x176"
+      },    
+      {
+        "src": "/logo_512.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ]
+  }

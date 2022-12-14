@@ -18,6 +18,7 @@ function Product_view({ setZoomin }) {
       <button
         type="button"
         className="absolute top-1/2 left-4 w-[40px] aspect-square rounded-full bg-white flex items-center justify-center rotate-180 md:hidden"
+        title="previus button for preview image"
         onClick={() => {
           activeProductImage > 1 &&
             setActiveProductImage(activeProductImage - 1);
@@ -36,6 +37,7 @@ function Product_view({ setZoomin }) {
       <button
         type="button"
         className="absolute top-1/2 right-4 w-[40px] aspect-square rounded-full bg-white flex items-center justify-center md:hidden"
+        title="next button for preview image"
         onClick={() => {
           activeProductImage < 4 &&
             setActiveProductImage(activeProductImage + 1);
@@ -63,7 +65,7 @@ function Product_view({ setZoomin }) {
             >
               <Image
                 src={`/assets/images/image-product-${item}-thumbnail.jpg`}
-                alt={`active-product-image`}
+                alt={`product-image`}
                 width={88}
                 height={88}
                 className={`hover:opacity-50 ${

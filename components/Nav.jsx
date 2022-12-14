@@ -14,22 +14,19 @@ function Nav() {
     <>
       <div className="max-w-[1111px] flex justify-between mx-auto h-[68px] lg:h-[112px]  w-full items-center px-6 xl:p-0 sticky top-0 bg-white z-40">
         <div className="flex items-center gap-4 lg:gap-14 h-full">
-          <Image
-            src={"/assets/svg/icon-menu.svg"}
-            width={16}
-            height={15}
-            alt="menu-icon"
-            className="lg:hidden cursor-pointer"
-            onClick={() => {
-              setMenuStatus(true);
-            }}
-          />
-          <button
-            type="button"
-            role={"button"}
-            aria-label="profile button"
-            id="profile"
-          >
+          <button type="button" aria-label={`button menu status:- ${menuStatus}`}>
+            <Image
+              src={"/assets/svg/icon-menu.svg"}
+              width={16}
+              height={15}
+              alt="menu-icon"
+              className="lg:hidden cursor-pointer"
+              onClick={() => {
+                setMenuStatus(true);
+              }}
+            />
+          </button>
+          <button type="button" aria-label="brand link" id="brand">
             <Image
               src={"/assets/svg/logo.svg"}
               width="137"
@@ -37,11 +34,12 @@ function Nav() {
               alt={"brand logo"}
             />
           </button>
-          <ul
+          <menu
+            role={"menubar"}
+            id="navbar-01"
             className="hidden lg:flex gap-8 text-grayish-blue h-full relative "
-            role={"menu"}
           >
-            <li
+            <span
               className={`hover:text-very-dark-blue border-b-4 border-transparent  grid items-center cursor-pointer ${
                 activePage === 1 && "border-orange"
               }`}
@@ -53,8 +51,8 @@ function Nav() {
               >
                 Collections
               </Link>
-            </li>
-            <li
+            </span>
+            <span
               className={`hover:text-very-dark-blue border-b-4 border-transparent grid items-center cursor-pointer ${
                 activePage === 2 && "border-orange"
               }`}
@@ -66,8 +64,8 @@ function Nav() {
               >
                 Men
               </Link>
-            </li>{" "}
-            <li
+            </span>{" "}
+            <span
               className={`hover:text-very-dark-blue border-b-4 border-transparent grid items-center cursor-pointer ${
                 activePage === 3 && "border-orange"
               }`}
@@ -80,8 +78,8 @@ function Nav() {
               >
                 Women
               </Link>
-            </li>
-            <li
+            </span>
+            <span
               className={`hover:text-very-dark-blue border-b-4 border-transparent grid items-center ${
                 activePage === 4 && "border-orange"
               }`}
@@ -94,8 +92,8 @@ function Nav() {
               >
                 About
               </Link>
-            </li>
-            <li
+            </span>
+            <span
               className={`hover:text-very-dark-blue border-b-4 border-transparent  grid items-center ${
                 activePage === 5 && "border-orange"
               }`}
@@ -108,13 +106,12 @@ function Nav() {
               >
                 Contact
               </Link>
-            </li>
-          </ul>
+            </span>
+          </menu>
         </div>
         <div id="cart--profile" className="flex items-center gap-6 lg:gap-12">
           <button
             type="button"
-            role="button"
             aria-label="product cart button"
             id="cart"
             className="relative cursor-pointer"
@@ -146,7 +143,7 @@ function Nav() {
         {cartStatus && <Floating_cart />}
       </div>
       <hr className="max-w-[1111px] mx-auto" />
-      <menu
+      <div
         className={`fixed top-0 left-0 w-full h-screen z-50 bg-black/75 ${
           menuStatus ? "left-0" : "-left-full"
         }`}
@@ -167,7 +164,7 @@ function Nav() {
               alt="close-menu-btn"
             />
           </button>
-          <div className="flex flex-col gap-4 ">
+          <menu className="flex flex-col gap-4" role={"menubar"}>
             <Link
               href={"#collections"}
               role={"menuitem"}
@@ -203,9 +200,9 @@ function Nav() {
             >
               Contact
             </Link>
-          </div>
+          </menu>
         </div>
-      </menu>
+      </div>
     </>
   );
 }
